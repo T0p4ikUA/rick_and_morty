@@ -1,9 +1,10 @@
 from django.urls import path
 
-from characters.views import get_random_characters
+from characters.views import get_random_characters_view, CharacterListView
 
 app_name = "characters"
 
 urlpatterns = [
-    path("characters/random/", get_random_characters, name="characters_random"),
+    path("characters/random/", get_random_characters_view, name="characters_random"),
+    path("characters/", CharacterListView.as_view(), name="characters_list"),
 ]
