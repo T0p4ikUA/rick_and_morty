@@ -1,12 +1,12 @@
 from django.db import models
 
+
 class Character(models.Model):
 
     class StatusChoices(models.TextChoices):
         ALIVE = "Alive"
         DEAD = "Dead"
         UNKNOWN = "Unknown"
-
 
     class GenderChoices(models.TextChoices):
         MALE = "Male"
@@ -19,7 +19,7 @@ class Character(models.Model):
     status = models.CharField(max_length=50, choices=StatusChoices.choices)
     species = models.CharField(max_length=255)
     gender = models.CharField(max_length=50, choices=GenderChoices.choices)
-    image =  models.URLField(max_length=255, unique=True)
+    image = models.URLField(max_length=255, unique=True)
 
     def __str__(self) -> str:
         return self.name
