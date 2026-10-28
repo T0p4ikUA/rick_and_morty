@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
     "characters",
 ]
 
@@ -127,4 +128,4 @@ MAILERS = {
     },
 }
 
-RICK_AND_MORTY_API_CHARACTERS_URL = {"https://rickandmortyapi.com/api/character/"}
+RICK_AND_MORTY_API_CHARACTERS_URL = "https://rickandmortyapi.com/api/character/"
