@@ -13,12 +13,14 @@
 4. All endpoints should be documented via Swagger. 
 
 ### How to run (Windows):
-1. Create venv: python -m venv venv
-2. Activate it: venv\Scripts\activate
-3. Install requirements: pip install -r requirements.txt
-4. Run migrations: python manage.py migrate
-5. Run Redis Server: docker run -d -p 6379:6379 redis
-6. Run celery worker for tasks handling: celery -A rick_and_morty_api worker -l INFO --pool=solo
-7. Run celery beat for task scheduling: celery -A rick_and_morty_api beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
-8. Create schedule for running sync in DB
-9. Run app: python manage.py runserver
+- Create venv: python -m venv venv
+- Activate it: venv\Scripts\activate
+- Install requirements: pip install -r requirements.txt
+- Create new POSTGRES DB & User
+- copy .env.sample -> .env and populate
+- Run migrations: python manage.py migrate
+- Run Redis Server: docker run -d -p 6379:6379 redis
+- Run celery worker for tasks handling: celery -A rick_and_morty_api worker -l INFO --pool=solo
+- Run celery beat for task scheduling: celery -A rick_and_morty_api beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+- Create schedule for running sync in DB
+- Run app: python manage.py runserver
